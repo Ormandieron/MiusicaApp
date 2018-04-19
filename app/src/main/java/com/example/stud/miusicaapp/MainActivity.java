@@ -20,14 +20,13 @@ public class MainActivity extends AppCompatActivity {
         bTopSongs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                @Override
-                        public void onClick (View view){
+
 
                     Intent intent = new Intent(MainActivity.this, TopSongsActivity.class );
                     startActivity(intent);
 
                 }
-            }
+
         });
     }
 }

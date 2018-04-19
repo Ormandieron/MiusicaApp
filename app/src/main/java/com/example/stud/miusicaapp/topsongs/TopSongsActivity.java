@@ -3,6 +3,7 @@ package com.example.stud.miusicaapp.topsongs;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -17,11 +18,7 @@ import retrofit2.Response;
 
 public class TopSongsActivity extends AppCompatActivity {
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
-    }
+    RecyclerView rvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +26,8 @@ public class TopSongsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_top_songs);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        rvList = findViewById(R.id.rvList);
 
         Call<TrendingList> trendingListCall = ApiServices.getService().getTrendingList( "us" ,
                 "itunes" , "singles" );
@@ -38,7 +37,7 @@ public class TopSongsActivity extends AppCompatActivity {
                     Response<TrendingList> response) {
                 TrendingList trendingList = response.body();
 
-                Toast.makeText(TopSongsActivity.this), "elemetow: " + trendingList.trending.size(),
+                Toast.makeText(TopSongsActivity.this, "elemetow: " + trendingList.trending.size(),
                         Toast.LENGTH_SHORT).show();
 
 
@@ -51,10 +50,11 @@ public class TopSongsActivity extends AppCompatActivity {
             }
         });
 
-        @Override
-        public boolean onSupportNavigateUp() {
-            onBackPressed();
-            return true;
-        }
+
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
