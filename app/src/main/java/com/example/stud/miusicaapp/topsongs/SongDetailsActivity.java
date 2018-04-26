@@ -7,6 +7,11 @@ import android.widget.Toast;
 
 import com.example.stud.miusicaapp.R;
 import com.example.stud.miusicaapp.api.ApiServices;
+import com.example.stud.miusicaapp.api.Tracks;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SongDetailsActivity extends AppCompatActivity {
 
@@ -32,12 +37,11 @@ public class SongDetailsActivity extends AppCompatActivity {
         ApiServices.getService().getTrack(trackId).enqueue(new Callback<Tracks>() {
 
             @Override
-            public void onResponse( Call<Tracks> call,  Response<Tracks>
+            public void onResponse(Call<Tracks> call, Response<Tracks>
                     response) {
                 Toast.makeText (
                         SongDetailsActivity.this ,
-                        "Pobrano dane" , Toast.LENGTH_SHORT
-                ).show();
+                        "Pobrano dane" , Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onFailure(Call<Tracks> call, Throwable t) {
@@ -57,6 +61,6 @@ public class SongDetailsActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-};
+}
 
 
