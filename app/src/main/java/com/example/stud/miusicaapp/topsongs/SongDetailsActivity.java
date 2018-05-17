@@ -3,6 +3,8 @@ package com.example.stud.miusicaapp.topsongs;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,6 +87,15 @@ public class SongDetailsActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.favorite_menu,menu);
+        return true;
+    }
+
+
 }
 
 
