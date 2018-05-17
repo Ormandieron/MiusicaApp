@@ -3,10 +3,14 @@ package com.example.stud.miusicaapp.topsongs;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.stud.miusicaapp.R;
 import com.example.stud.miusicaapp.api.ApiServices;
+import com.example.stud.miusicaapp.api.Track;
 import com.example.stud.miusicaapp.api.Tracks;
 
 import retrofit2.Call;
@@ -39,9 +43,12 @@ public class SongDetailsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Tracks> call, Response<Tracks>
                     response) {
-                Toast.makeText (
-                        SongDetailsActivity.this ,
-                        "Pobrano dane" , Toast.LENGTH_SHORT).show();
+
+                Tracks tracks = response.body();
+                if (tracks != null && tracks. track .size() > 0 ) {
+                    showData(tracks. track .get( 0 ));
+                }
+
             }
             @Override
             public void onFailure(Call<Tracks> call, Throwable t) {
@@ -54,6 +61,23 @@ public class SongDetailsActivity extends AppCompatActivity {
         });
 
     }
+    private void showData(Track track) {
+        TextView tvAlbum = findViewById(R.id.tvAlbum);
+        TextView tvGenre = findViewById(R.id.tvGenre);
+        TextView tvStyle = findViewById(R.id.tvStyle);
+        TextView tvDescription = findViewById(R.id.tvDescription);
+        tvAlbum.setText(track.strAlbum);
+        tvGenre.setText(track.strGenre);
+        tvStyle.setText(track.strStyle);
+        tvDescription.setText(track.strDescriptionEN);
+
+        if (track. strTrackThumb != null && !track. strTrackThumb .isEmpty()) {
+            ImageView ivThumb = findViewById(R.id. ivThumb );
+            Glide. with ( this ).load(track. strTrackThumb ).into(ivThumb);
+        }
+
+    }
+
 
 
     @Override
