@@ -111,7 +111,7 @@ public class SongDetailsActivity extends AppCompatActivity {
     }
 private void addRemoveFavorite() {
     Toast. makeText ( this , "TODO" , Toast. LENGTH_SHORT ).show();
-    
+
 }
 
 }
