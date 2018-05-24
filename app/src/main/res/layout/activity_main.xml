@@ -3,15 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
+    android:weightSum="2"
     android:orientation="vertical"
     tools:context="com.example.stud.miusicaapp.MainActivity">
 
     <Button
-        android:id="@+id/bTopSongs"
+    android:id="@+id/bTopSongs"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:text="@string/top_songs" />
+
+    <Button
+        android:id="@+id/bFavorites"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="@string/top_songs" />
+        android:text="@string/favorites" />
 
 </LinearLayout>
