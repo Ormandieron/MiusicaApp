@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.stud.miusicaapp.favorites.FavoritesActivity;
-import com.example.stud.miusicaapp.searchalbum.SerchAlbumActivity;
+import com.example.stud.miusicaapp.searchalbum.SearchAlbumActivity;
 import com.example.stud.miusicaapp.topsongs.TopSongsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(MainActivity.this, SerchAlbumActivity.class );
+                Intent intent = new Intent(MainActivity.this, SearchAlbumActivity.class );
                 startActivity(intent);
 
             }
