@@ -8,4 +8,11 @@
     <string name="searchalbum">searchalbum</string>
     <string name="search">Szukaj</string>
     <string name="enter_artist_name">Podaj nazwę wykonawcy</string>
+    <string name="year_released">Rok wydania:</string>
+    <string name="sales">sprzedaż:</string>
+    <string name="score">Wynik:</string>
+    <string name="sort_by_name">sortuj wg nazwy</string>
+    <string name="sort_by_year">sortuj wg roku</string>
+    <string name="sort_by_sale">sortuj wg sprzedaży</string>
+    <string name="sort_by_score">sortuj wg wyniku</string>
 </resources>
