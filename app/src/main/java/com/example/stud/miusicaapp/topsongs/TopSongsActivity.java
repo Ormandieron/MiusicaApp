@@ -5,14 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.stud.miusicaapp.R;
-import com.example.stud.miusicaapp.api.ApiServices;
+import com.example.stud.miusicaapp.api.ApiService;
 import com.example.stud.miusicaapp.api.TrendingList;
 import com.example.stud.miusicaapp.api.TrendingSingle;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +40,7 @@ public class TopSongsActivity extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
         rvList .setLayoutManager(linearLayoutManager);
 
-        Call<TrendingList> trendingListCall = ApiServices.getService().getTrendingList( "us" ,
+        Call<TrendingList> trendingListCall = ApiService.getService().getTrendingList( "us" ,
                 "itunes" , "singles" );
         trendingListCall.enqueue( new Callback<TrendingList>() {
             @Override

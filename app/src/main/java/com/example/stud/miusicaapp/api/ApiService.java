@@ -4,7 +4,7 @@ package com.example.stud.miusicaapp.api;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiServices {
+public class ApiService {
 
     public static ApiClient getService() {
         Retrofit retrofit = new Retrofit.Builder()

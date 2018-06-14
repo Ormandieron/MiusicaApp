@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.stud.miusicaapp.R;
-import com.example.stud.miusicaapp.api.ApiServices;
+import com.example.stud.miusicaapp.api.ApiService;
 import com.example.stud.miusicaapp.api.Track;
 import com.example.stud.miusicaapp.api.Tracks;
 import com.example.stud.miusicaapp.database.Favorite;
@@ -50,7 +50,7 @@ public class SongDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(track);
         getSupportActionBar().setSubtitle(artist);
 
-        ApiServices.getService().getTrack(trackId).enqueue(new Callback<Tracks>() {
+        ApiService.getService().getTrack(trackId).enqueue(new Callback<Tracks>() {
 
             @Override
             public void onResponse(Call<Tracks> call, Response<Tracks>
